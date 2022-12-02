@@ -11,7 +11,7 @@
     "test": "jest",
     "test:watch": "yarn test --watch",
     "generate:component": "yarn plop --plopfile generators/plopfile.js",
-    "generate:page": "yarn plop --plopfile generators/plopfilepage.js",
+    "generate:template": "yarn plop --plopfile generators/plopfiletemplate.js",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public"
   },
