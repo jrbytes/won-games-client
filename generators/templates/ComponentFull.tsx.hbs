@@ -1,0 +1,19 @@
+import * as S from './styles'
+
+export type {{pascalCase name}}Props = {
+  example: string
+}
+
+const {{pascalCase name}} = (props: {{pascalCase name}}Props) => {
+  function handle{{pascalCase name}}() {
+    console.log('handle{{pascalCase name}}', props)
+  }
+
+  return (
+    <S.Wrapper>
+      <h1>{{pascalCase name}}</h1>
+    </S.Wrapper>
+  )
+}
+
+export default {{pascalCase name}}
