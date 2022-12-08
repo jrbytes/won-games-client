@@ -1,7 +1,6 @@
-import { ArrowBackIos as ArrowLeft } from '@styled-icons/material-outlined/ArrowBackIos'
-import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/ArrowForwardIos'
-
 import GameCard, { GameCardProps } from 'components/GameCard'
+import SlickArrowLeft from 'components/SlickArrowLeft'
+import SlickArrowRight from 'components/SlickArrowRight'
 import Slider, { SliderSettings } from 'components/Slider'
 
 import * as S from './styles'
@@ -15,8 +14,8 @@ const settings: SliderSettings = {
   slidesToShow: 4,
   infinite: false,
   lazyLoad: 'ondemand',
-  nextArrow: <ArrowRight aria-label="next games" />,
-  prevArrow: <ArrowLeft aria-label="previous games" />,
+  prevArrow: <SlickArrowLeft aria-label="previous games" />,
+  nextArrow: <SlickArrowRight aria-label="next games" />,
   responsive: [
     {
       breakpoint: 1375,

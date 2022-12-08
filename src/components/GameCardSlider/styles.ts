@@ -39,6 +39,8 @@ export const Wrapper = styled.section<WrapperProps>`
     .slick-prev,
     .slick-next {
       display: block;
+      background-color: transparent;
+      border: 0;
       color: ${theme.colors[color!]};
       cursor: pointer;
       position: absolute;

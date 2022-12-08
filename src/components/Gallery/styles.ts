@@ -6,6 +6,8 @@ export const Wrapper = styled.div`
     .slick-prev,
     .slick-next {
       display: block;
+      background-color: transparent;
+      border: 0;
       color: ${theme.colors.white};
       cursor: pointer;
       position: absolute;
