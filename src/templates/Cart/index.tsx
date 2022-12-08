@@ -6,7 +6,9 @@ import { Divider } from '../../components/Divider'
 import { GameCardProps } from '../../components/GameCard'
 import { HighlightProps } from '../../components/Highlight'
 import CartList, { CartListProps } from '../../components/CartList'
-import PaymentOptions, { PaymentOptionsProps } from '../../components/PaymentOptions'
+import PaymentOptions, {
+  PaymentOptionsProps
+} from '../../components/PaymentOptions'
 
 import * as S from './styles'
 import Empty from '../../components/Empty'

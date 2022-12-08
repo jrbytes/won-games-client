@@ -48,7 +48,9 @@ const Menu = ({ username }: MenuProps) => {
 
         {!username && (
           <MediaMatch greaterThan="medium">
-            <Button href="/sign-in" as="a">Sign in</Button>
+            <Button href="/sign-in" as="a">
+              Sign in
+            </Button>
           </MediaMatch>
         )}
       </S.MenuGroup>
@@ -73,7 +75,7 @@ const Menu = ({ username }: MenuProps) => {
               Sign In
             </Button>
             <span>or</span>
-            <S.LinkCreateAccount href='/sign-up' title="Sign Up">
+            <S.LinkCreateAccount href="/sign-up" title="Sign Up">
               Sign Up
             </S.LinkCreateAccount>
           </S.RegisterBox>

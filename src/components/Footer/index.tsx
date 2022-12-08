@@ -60,15 +60,9 @@ const Footer = () => (
         </Heading>
 
         <nav aria-labelledby="footer resources">
-          <Link href="/">
-            Home
-          </Link>
-          <Link href="/games">
-            Store
-          </Link>
-          <Link href="/search">
-            Buscar
-          </Link>
+          <Link href="/">Home</Link>
+          <Link href="/games">Store</Link>
+          <Link href="/search">Buscar</Link>
         </nav>
       </S.Column>
 
