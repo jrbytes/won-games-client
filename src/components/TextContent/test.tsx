@@ -34,8 +34,9 @@ describe('<TextContent />', () => {
   it('should be able to render different background colors when change the width from content', () => {
     renderWithTheme(<TextContent {...props} />)
 
-    const wrapper = screen.getByRole('heading', { name: /description/i })
-      .parentElement
+    const wrapper = screen.getByRole('heading', {
+      name: /description/i
+    }).parentElement
 
     expect(wrapper).toHaveStyle({ color: '#FAFAFA' })
 
