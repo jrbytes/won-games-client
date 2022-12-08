@@ -75,7 +75,6 @@ const wrapperModifiers = {
     top: 0;
     left: 0;
 
-
     ${Overlay} {
       z-index: ${theme.layers.modal};
       background-color: #fff;
