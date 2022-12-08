@@ -4,6 +4,7 @@ import {
   ExitToApp,
   FormatListBulleted
 } from '@styled-icons/material-outlined'
+import Link from 'next/link'
 import * as S from './styles'
 
 export type ProfileMenuProps = {
@@ -12,25 +13,37 @@ export type ProfileMenuProps = {
 
 const ProfileMenu = ({ activeLink }: ProfileMenuProps) => (
   <S.Nav>
-    <S.LinkItem href="/profile/me" isActive={activeLink === '/profile/me'} title="My profile">
-      <AccountCircle size={24} />
-      <span>My profile</span>
-    </S.LinkItem>
+    <Link href="/profile/me">
+      <S.LinkItem isActive={activeLink === '/profile/me'} title="My profile">
+        <AccountCircle size={24} />
+        <span>My profile</span>
+      </S.LinkItem>
+    </Link>
 
-    <S.LinkItem href="/profile/cards" isActive={activeLink === '/profile/cards'} title="My cards">
-      <CreditCard size={24} />
-      <span>My cards</span>
-    </S.LinkItem>
+    <Link href="/profile/cards">
+      <S.LinkItem
+        isActive={activeLink === '/profile/cards'}
+        title="My cards"
+        data-testid="test-my-card"
+      >
+        <CreditCard size={24} />
+        <span>My cards</span>
+      </S.LinkItem>
+    </Link>
 
-    <S.LinkItem href="/profile/orders" isActive={activeLink === '/profile/orders'} title="My orders">
-      <FormatListBulleted size={24} />
-      <span>My orders</span>
-    </S.LinkItem>
+    <Link href="/profile/orders">
+      <S.LinkItem isActive={activeLink === '/profile/orders'} title="My orders">
+        <FormatListBulleted size={24} />
+        <span>My orders</span>
+      </S.LinkItem>
+    </Link>
 
-    <S.LinkItem href="/logout">
-      <ExitToApp size={24} />
-      <span>Sign out</span>
-    </S.LinkItem>
+    <Link href="/logout">
+      <S.LinkItem>
+        <ExitToApp size={24} />
+        <span>Sign out</span>
+      </S.LinkItem>
+    </Link>
   </S.Nav>
 )
 

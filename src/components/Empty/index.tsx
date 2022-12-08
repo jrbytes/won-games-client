@@ -1,5 +1,5 @@
 import Button from '../Button'
-import Link from 'next/link'
+
 import * as S from './styles'
 
 export type EmptyProps = {
@@ -20,9 +20,9 @@ const Empty = ({ title, description, hasLink }: EmptyProps) => (
     <S.Description>{description}</S.Description>
 
     {hasLink && (
-      <Link href="/" passHref>
-        <Button as="a">Go back to store</Button>
-      </Link>
+      <Button href="/" as="a">
+        Go back to store
+      </Button>
     )}
   </S.Wrapper>
 )

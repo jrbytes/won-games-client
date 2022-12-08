@@ -22,9 +22,8 @@ const FormSignIn = () => (
         placeholder="Password"
         icon={<Lock />}
       />
-      <Link href="#">
-        <S.ForgotPassword>Forgot your password?</S.ForgotPassword>
-      </Link>
+
+      <S.ForgotPassword href="#">Forgot your password?</S.ForgotPassword>
 
       <Button size="large" fullWidth>
         Sign in now

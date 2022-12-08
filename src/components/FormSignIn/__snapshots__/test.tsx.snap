@@ -208,13 +208,10 @@ exports[`<FormSignIn /> should be able to render the form 1`] = `
           </div>
         </div>
         <a
+          class="c6"
           href="#"
         >
-          <a
-            class="c6"
-          >
-            Forgot your password?
-          </a>
+          Forgot your password?
         </a>
         <button
           class="c7 c8"

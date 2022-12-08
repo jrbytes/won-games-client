@@ -84,15 +84,12 @@ exports[`<Empty /> should be able to render the Empty 1`] = `
         A simple description
       </p>
       <a
+        class="c4"
         href="/"
       >
-        <a
-          class="c4"
-        >
-          <span>
-            Go back to store
-          </span>
-        </a>
+        <span>
+          Go back to store
+        </span>
       </a>
     </main>
   </div>
