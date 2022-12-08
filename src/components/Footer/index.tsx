@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
-import Heading from 'components/Heading'
-import Logo from 'components/Logo'
+import Heading from '../Heading'
+import Logo from '../Logo'
 import * as S from './styles'
 
 const Footer = () => (
@@ -61,13 +61,13 @@ const Footer = () => (
 
         <nav aria-labelledby="footer resources">
           <Link href="/">
-            <a>Home</a>
+            Home
           </Link>
           <Link href="/games">
-            <a>Store</a>
+            Store
           </Link>
           <Link href="/search">
-            <a>Buscar</a>
+            Buscar
           </Link>
         </nav>
       </S.Column>

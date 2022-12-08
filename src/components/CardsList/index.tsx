@@ -1,5 +1,5 @@
-import Heading from 'components/Heading'
-import { PaymentCardProps } from 'components/PaymentOptions'
+import Heading from '../Heading'
+import { PaymentCardProps } from '../PaymentOptions'
 import * as S from './styles'
 
 export type CardsListProps = {

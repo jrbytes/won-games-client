@@ -1,17 +1,25 @@
+const path = require("path")
+
 module.exports = {
-  stories: ['../src/components/**/stories.tsx'],
-  addons: ['@storybook/addon-essentials'],
-  babel: async (options) => ({
-    ...options,
-    plugins: [
-      ...options.plugins,
-      '@babel/plugin-transform-react-jsx',
-      ['@babel/plugin-proposal-private-property-in-object', { loose: true }]
-    ]
-  }),
-  webpackFinal: (config) => {
-    config.resolve.modules.push(`${process.cwd()}/src`)
-    return config
+  "stories": ['../src/components/**/stories.tsx'],
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+    {
+      name: "storybook-addon-next",
+      options: {
+        nextConfigPath: path.resolve(__dirname, "../next.config.js"),
+      },
+    }
+  ],
+  "framework": "@storybook/react",
+  "core": {
+    "builder": "@storybook/builder-webpack5"
   },
-  typescript: { reactDocgen: 'react-docgen' }
-}
+  docs: {
+    docsPage: "automatic"
+  },
+  typescript: { reactDocgen: 'react-docgen' },
+  staticDirs: ['../public']
+};

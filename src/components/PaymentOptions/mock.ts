@@ -1,12 +1,15 @@
+import mastercard from '/public/img/master-card.png'
+import visa from '/public/img/visa.png'
+
 export default [
   {
     flag: 'mastercard',
-    img: '/img/master-card.png',
+    img: mastercard.src,
     number: '**** **** **** 4325'
   },
   {
     flag: 'visa',
-    img: '/img/visa.png',
+    img: visa.src,
     number: '**** **** **** 4326'
   }
 ]

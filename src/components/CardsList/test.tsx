@@ -14,7 +14,7 @@ describe('<CardsList />', () => {
     ).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /visa/i })).toHaveAttribute(
       'src',
-      '/img/visa.png'
+      cardsMock[1].img
     )
     expect(screen.getByText(/4325/)).toBeInTheDocument()
   })

@@ -1,7 +1,7 @@
 import { Apple, Windows, Linux } from '@styled-icons/fa-brands'
 
-import Heading from 'components/Heading'
-import MediaMatch from 'components/MediaMatch'
+import Heading from '../Heading'
+import MediaMatch from '../MediaMatch'
 
 import * as S from './styles'
 

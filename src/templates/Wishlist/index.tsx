@@ -1,12 +1,12 @@
-import Base from 'templates/Base'
-import { Container } from 'components/Container'
-import GameCard, { GameCardProps } from 'components/GameCard'
-import Heading from 'components/Heading'
-import { HighlightProps } from 'components/Highlight'
-import ShowCase from 'components/ShowCase'
-import { Grid } from 'components/Grid'
-import { Divider } from 'components/Divider'
-import Empty from 'components/Empty'
+import Base from '../../templates/Base'
+import { Container } from '../../components/Container'
+import GameCard, { GameCardProps } from '../../components/GameCard'
+import Heading from '../../components/Heading'
+import { HighlightProps } from '../../components/Highlight'
+import ShowCase from '../../components/ShowCase'
+import { Grid } from '../../components/Grid'
+import { Divider } from '../../components/Divider'
+import Empty from '../../components/Empty'
 
 export type WishlistTemplateProps = {
   games?: GameCardProps[]

@@ -1,6 +1,6 @@
-import Button from 'components/Button'
-import Heading from 'components/Heading'
-import TextField from 'components/TextField'
+import Button from '../Button'
+import Heading from '../Heading'
+import TextField from '../TextField'
 import * as S from './styles'
 
 const FormProfile = () => (

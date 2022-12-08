@@ -1,8 +1,8 @@
-import Game, { GameTemplatePros } from 'templates/Game'
+import Game, { GameTemplatePros } from '../../templates/Game'
 
-import galleryMock from 'components/Gallery/mock'
-import gamesMock from 'components/GameCardSlider/mock'
-import highlightMock from 'components/Highlight/mock'
+import galleryMock from '../../components/Gallery/mock'
+import gamesMock from '../../components/GameCardSlider/mock'
+import highlightMock from '../../components/Highlight/mock'
 
 export default function Index(props: GameTemplatePros) {
   return <Game {...props} />

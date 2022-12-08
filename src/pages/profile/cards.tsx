@@ -1,7 +1,7 @@
-import CardsList, { CardsListProps } from 'components/CardsList'
-import Profile from 'templates/Profile'
+import CardsList, { CardsListProps } from '../../components/CardsList'
+import Profile from '../../templates/Profile'
 
-import mockCards from 'components/PaymentOptions/mock'
+import mockCards from '../../components/PaymentOptions/mock'
 
 export default function Cards({ cards }: CardsListProps) {
   return (

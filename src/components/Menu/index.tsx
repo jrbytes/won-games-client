@@ -5,9 +5,9 @@ import { ShoppingCart as ShoppingCartIcon } from '@styled-icons/material-outline
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 
-import Button from 'components/Button'
-import Logo from 'components/Logo'
-import MediaMatch from 'components/MediaMatch'
+import Button from '../Button'
+import Logo from '../Logo'
+import MediaMatch from '../MediaMatch'
 import * as S from './styles'
 
 export type MenuProps = {
@@ -26,18 +26,14 @@ const Menu = ({ username }: MenuProps) => {
       </MediaMatch>
 
       <S.LogoWrapper>
-        <Link href="/" passHref>
-          <a>
-            <Logo hideOnMobile />
-          </a>
+        <Link href="/">
+          <Logo hideOnMobile />
         </Link>
       </S.LogoWrapper>
 
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
-          <Link href="/" passHref>
-            <S.MenuLink href="#">Home</S.MenuLink>
-          </Link>
+          <S.MenuLink href="/">Home</S.MenuLink>
           <S.MenuLink href="#">Explore</S.MenuLink>
         </S.MenuNav>
       </MediaMatch>
@@ -52,9 +48,7 @@ const Menu = ({ username }: MenuProps) => {
 
         {!username && (
           <MediaMatch greaterThan="medium">
-            <Link href="/sign-in" passHref>
-              <Button as="a">Sign in</Button>
-            </Link>
+            <Button href="/sign-in" as="a">Sign in</Button>
           </MediaMatch>
         )}
       </S.MenuGroup>
@@ -62,9 +56,7 @@ const Menu = ({ username }: MenuProps) => {
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
         <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
-          <Link href="/" passHref>
-            <S.MenuLink href="#">Home</S.MenuLink>
-          </Link>
+          <S.MenuLink href="/">Home</S.MenuLink>
           <S.MenuLink href="#">Explore</S.MenuLink>
 
           {!!username && (
@@ -77,15 +69,13 @@ const Menu = ({ username }: MenuProps) => {
 
         {!username && (
           <S.RegisterBox>
-            <Link href="/sign-in" passHref>
-              <Button fullWidth size="large" as="a">
-                Sign In
-              </Button>
-            </Link>
+            <Button fullWidth size="large" as="a" href="/sign-in">
+              Sign In
+            </Button>
             <span>or</span>
-            <Link href="/sign-up" passHref>
-              <S.CreateAccount title="Sign Up">Sign Up</S.CreateAccount>
-            </Link>
+            <S.LinkCreateAccount href='/sign-up' title="Sign Up">
+              Sign Up
+            </S.LinkCreateAccount>
           </S.RegisterBox>
         )}
       </S.MenuFull>

@@ -2,9 +2,9 @@ import styled, { css, DefaultTheme } from 'styled-components'
 import media from 'styled-media-query'
 import { rgba } from 'polished'
 
-import * as CheckboxStyles from 'components/Checkbox/styles'
-import * as RadioStyles from 'components/Radio/styles'
-import * as HeadingStyles from 'components/Heading/styles'
+import * as CheckboxStyles from '../Checkbox/styles'
+import * as RadioStyles from '../Radio/styles'
+import * as HeadingStyles from '../Heading/styles'
 
 export const IconWrapper = styled.div`
   cursor: pointer;
@@ -36,6 +36,7 @@ export const Content = styled.div`
 
 export const Overlay = styled.div`
   ${({ theme }) => css`
+    z-index: ${theme.layers.base};
     transition: opacity ${theme.transition.default};
     opacity: 0;
     position: absolute;
@@ -73,6 +74,7 @@ const wrapperModifiers = {
     flex-direction: column;
     top: 0;
     left: 0;
+
 
     ${Overlay} {
       z-index: ${theme.layers.modal};

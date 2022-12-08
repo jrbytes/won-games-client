@@ -1,15 +1,15 @@
-import Base from 'templates/Base'
-import { Container } from 'components/Container'
-import Heading from 'components/Heading'
-import ShowCase from 'components/ShowCase'
-import { Divider } from 'components/Divider'
-import { GameCardProps } from 'components/GameCard'
-import { HighlightProps } from 'components/Highlight'
-import CartList, { CartListProps } from 'components/CartList'
-import PaymentOptions, { PaymentOptionsProps } from 'components/PaymentOptions'
+import Base from '../../templates/Base'
+import { Container } from '../../components/Container'
+import Heading from '../../components/Heading'
+import ShowCase from '../../components/ShowCase'
+import { Divider } from '../../components/Divider'
+import { GameCardProps } from '../../components/GameCard'
+import { HighlightProps } from '../../components/Highlight'
+import CartList, { CartListProps } from '../../components/CartList'
+import PaymentOptions, { PaymentOptionsProps } from '../../components/PaymentOptions'
 
 import * as S from './styles'
-import Empty from 'components/Empty'
+import Empty from '../../components/Empty'
 
 export type CartProps = {
   recommendedGames: GameCardProps[]

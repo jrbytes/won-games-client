@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Close, FilterList } from '@styled-icons/material-outlined'
 
-import Button from 'components/Button'
-import Checkbox from 'components/Checkbox'
-import Heading from 'components/Heading'
-import Radio from 'components/Radio'
+import Button from '../Button'
+import Checkbox from '../Checkbox'
+import Heading from '../Heading'
+import Radio from '../Radio'
 
 import * as S from './styles'
 

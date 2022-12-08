@@ -1,10 +1,6 @@
-import { addDecorator } from '@storybook/react'
-import { withNextRouter } from 'storybook-addon-next-router'
 import { ThemeProvider } from 'styled-components'
-import GlobalStyles from 'styles/global'
-import theme from 'styles/theme'
-
-addDecorator(withNextRouter())
+import GlobalStyles from '../src/styles/global'
+import theme from '../src/styles/theme'
 
 export const parameters = {
   backgrounds: {
@@ -19,6 +15,13 @@ export const parameters = {
         value: theme.colors.mainBg
       }
     ]
+  },
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
   }
 }
 

@@ -1,11 +1,11 @@
-import { BannerProps } from 'components/Banner'
-import { GameCardProps } from 'components/GameCard'
-import { HighlightProps } from 'components/Highlight'
+import { BannerProps } from '../../components/Banner'
+import { GameCardProps } from '../../components/GameCard'
+import { HighlightProps } from '../../components/Highlight'
 
-import Base from 'templates/Base'
-import { Container } from 'components/Container'
-import ShowCase from 'components/ShowCase'
-import BannerSlider from 'components/BannerSlider'
+import Base from '../../templates/Base'
+import { Container } from '../../components/Container'
+import ShowCase from '../../components/ShowCase'
+import BannerSlider from '../../components/BannerSlider'
 
 import * as S from './styles'
 

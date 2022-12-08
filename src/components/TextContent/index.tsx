@@ -1,4 +1,4 @@
-import Heading from 'components/Heading'
+import Heading from '../Heading'
 import * as S from './styles'
 
 export type TextContentProps = {
