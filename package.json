@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint src --max-warnings=0",
     "test": "jest",
     "test:watch": "yarn test --watch",
     "generate": "yarn plop --plopfile generators/plopfile.js",
@@ -16,8 +16,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint --fix && npm run test --findRelatedTests --bail"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "npm run lint --fix",
+      "npm run test --findRelatedTests --bail"
+    ]
   },
   "dependencies": {
     "@styled-icons/boxicons-solid": "^10.46.0",
@@ -66,6 +72,7 @@
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
     "jest-styled-components": "^7.0.3",
+    "lint-staged": "^13.1.0",
     "plop": "^3.1.1",
     "prettier": "^2.8.1",
     "storybook-addon-next": "^1.7.1",
