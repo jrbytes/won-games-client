@@ -22,3 +22,9 @@ export const Default: ComponentStory<typeof CartDropdown> = (args) => (
     <CartDropdown {...args} />
   </div>
 )
+
+export const Empty: ComponentStory<typeof CartDropdown> = () => (
+  <div style={{ maxWidth: '98%', display: 'flex', justifyContent: 'flex-end' }}>
+    <CartDropdown />
+  </div>
+)
