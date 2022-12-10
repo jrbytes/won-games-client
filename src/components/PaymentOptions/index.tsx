@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Image from 'next/image'
 import { Add, ShoppingCart } from '@styled-icons/material-outlined'
 
 import Button from '../Button'
@@ -33,7 +34,12 @@ const PaymentOptions = ({ cards, handlePayment }: PaymentOptionsProps) => {
             cards.map((card) => (
               <S.CardItem key={card.number}>
                 <S.CardInfo>
-                  <img src={card.img} alt={card.flag} />
+                  <Image
+                    src={card.img}
+                    alt={card.flag}
+                    width={38}
+                    height={24}
+                  />
                   {card.number}
                 </S.CardInfo>
                 <Radio

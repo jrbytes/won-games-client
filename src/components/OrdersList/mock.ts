@@ -1,4 +1,4 @@
-export default [
+const mock = [
   {
     img: 'https://source.unsplash.com/user/willianjusten/151x70',
     title: 'Red Dead Redemption 2',
@@ -24,3 +24,5 @@ export default [
     }
   }
 ]
+
+export default mock

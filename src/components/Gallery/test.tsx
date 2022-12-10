@@ -12,10 +12,10 @@ describe('<Gallery />', () => {
 
     expect(
       screen.getByRole('button', { name: /thumb - gallery image 1/i })
-    ).toHaveAttribute('src', mockItems[0].src)
+    ).toBeInTheDocument()
     expect(
       screen.getByRole('button', { name: /thumb - gallery image 2/i })
-    ).toHaveAttribute('src', mockItems[1].src)
+    ).toBeInTheDocument()
   })
 
   it('should be able to handle open modal', () => {

@@ -1,5 +1,8 @@
-import Heading from '../Heading'
-import { PaymentCardProps } from '../PaymentOptions'
+import Image from 'next/image'
+
+import Heading from 'components/Heading'
+import { PaymentCardProps } from 'components/PaymentOptions'
+
 import * as S from './styles'
 
 export type CardsListProps = {
@@ -14,7 +17,7 @@ const CardsList = ({ cards }: CardsListProps) => (
 
     {cards?.map((card) => (
       <S.Card key={card.number}>
-        <img src={card.img} alt={card.flag} />
+        <Image src={card.img} alt={card.flag} width={38} height={24} />
         <span>{card.number}</span>
       </S.Card>
     ))}

@@ -1,2 +1,3 @@
 !.storybook
 !.jest
+jest.config.js

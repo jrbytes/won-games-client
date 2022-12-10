@@ -1,7 +1,7 @@
 import mastercard from '/public/img/master-card.png'
 import visa from '/public/img/visa.png'
 
-export default [
+const mock = [
   {
     flag: 'mastercard',
     img: mastercard.src,
@@ -13,3 +13,5 @@ export default [
     number: '**** **** **** 4326'
   }
 ]
+
+export default mock

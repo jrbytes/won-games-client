@@ -1,6 +1,6 @@
 const nextJest = require('next/jest')
 const createJestConfig = nextJest({
-  moduleDirectories: ['src'],
+  moduleDirectories: ['src']
 })
 const customJestConfig = {
   testEnvironment: 'jsdom',

@@ -16,10 +16,7 @@ describe('<GameItem />', () => {
     expect(
       screen.getByRole('heading', { name: /population zero/i })
     ).toBeInTheDocument()
-    expect(screen.getByRole('img', { name: props.title })).toHaveAttribute(
-      'src',
-      props.img
-    )
+    expect(screen.getByRole('img', { name: props.title })).toBeInTheDocument()
     expect(screen.getByText('$ 235.00')).toBeInTheDocument()
   })
 
@@ -42,10 +39,9 @@ describe('<GameItem />', () => {
 
     renderWithTheme(<GameItem {...props} paymentInfo={paymentInfo} />)
 
-    expect(screen.getByRole('img', { name: paymentInfo.flag })).toHaveAttribute(
-      'src',
-      paymentInfo.img
-    )
+    expect(
+      screen.getByRole('img', { name: paymentInfo.flag })
+    ).toBeInTheDocument()
 
     expect(screen.getByText(paymentInfo.number)).toBeInTheDocument()
     expect(screen.getByText(paymentInfo.purchaseDate)).toBeInTheDocument()

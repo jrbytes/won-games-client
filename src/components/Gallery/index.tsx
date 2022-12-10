@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
+import Image from 'next/image'
 import SlickSlider from 'react-slick'
 import { Close } from '@styled-icons/material-outlined'
 
@@ -81,7 +82,7 @@ const Gallery = ({ items }: GalleryProps) => {
     <S.Wrapper>
       <Slider ref={slider} settings={settings}>
         {items.map((item, index) => (
-          <img
+          <Image
             key={`thumb-${index}`}
             role="button"
             src={item.src}
@@ -90,6 +91,8 @@ const Gallery = ({ items }: GalleryProps) => {
               setIsOpen(true)
               slider.current?.slickGoTo(index, true)
             }}
+            width={350}
+            height={195}
           />
         ))}
       </Slider>
@@ -106,7 +109,13 @@ const Gallery = ({ items }: GalleryProps) => {
         <S.Content>
           <Slider ref={slider} settings={modalSettings}>
             {items.map((item, index) => (
-              <img key={`gallery-${index}`} src={item.src} alt={item.label} />
+              <Image
+                key={`gallery-${index}`}
+                src={item.src}
+                alt={item.label}
+                width={1200}
+                height={668}
+              />
             ))}
           </Slider>
         </S.Content>

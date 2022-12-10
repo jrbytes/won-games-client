@@ -41,7 +41,7 @@ export const Wrapper = styled.section<WrapperProps>`
       display: block;
       background-color: transparent;
       border: 0;
-      color: ${theme.colors[color!]};
+      color: ${color && theme.colors[color]};
       cursor: pointer;
       position: absolute;
       top: 50%;

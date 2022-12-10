@@ -3,6 +3,7 @@ import {
   Favorite,
   FavoriteBorder
 } from '@styled-icons/material-outlined'
+import Image from 'next/image'
 
 import Ribbon, { RibbonColors, RibbonSizes } from '../Ribbon'
 import Button from '../Button'
@@ -40,7 +41,7 @@ const GameCard = ({
       </Ribbon>
     )}
     <S.ImageBox>
-      <img src={img} alt={title} />
+      <Image src={img} alt={title} width={300} height={140} />
     </S.ImageBox>
     <S.Content>
       <S.Info>
