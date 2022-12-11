@@ -10,7 +10,7 @@ const props = {
 }
 
 describe('<GameInfo />', () => {
-  it('should be able to render game informations', () => {
+  it('should be able to render game information', () => {
     const { container } = renderWithTheme(<GameInfo {...props} />)
 
     expect(

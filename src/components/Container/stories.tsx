@@ -1,9 +1,9 @@
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Container } from '.'
 
 export default {
   title: 'Container',
   component: Container
-} as Meta
+} as ComponentMeta<typeof Container>
 
-export const Default: Story = () => <Container />
+export const Default: ComponentStory<typeof Container> = () => <Container />

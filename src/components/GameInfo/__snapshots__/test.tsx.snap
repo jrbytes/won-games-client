@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<GameInfo /> should be able to render game informations 1`] = `
+exports[`<GameInfo /> should be able to render game information 1`] = `
 .c7 {
   display: inline-block;
   vertical-align: middle;
@@ -295,4 +295,4 @@ exports[`<GameInfo /> should be able to render game informations 1`] = `
     </button>
   </div>
 </div>
-`
+`;

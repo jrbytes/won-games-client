@@ -1,6 +1,6 @@
 import Button from 'components/Button'
 import Empty from 'components/Empty'
-import GameItem, { GameItemProps } from '../GameItem'
+import GameItem, { GameItemProps } from 'components/GameItem'
 
 import * as S from './styles'
 

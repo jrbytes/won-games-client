@@ -5,8 +5,8 @@ import {
 } from '@styled-icons/material-outlined'
 import Image from 'next/image'
 
-import Ribbon, { RibbonColors, RibbonSizes } from '../Ribbon'
-import Button from '../Button'
+import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon'
+import Button from 'components/Button'
 import * as S from './styles'
 
 export type GameCardProps = {

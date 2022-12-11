@@ -1,5 +1,5 @@
-import { Story, Meta } from '@storybook/react/types-6-0'
-import GameItem, { GameItemProps } from '.'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+import GameItem from '.'
 
 export default {
   title: 'GameItem',
@@ -9,11 +9,13 @@ export default {
     title: 'Population Zero',
     price: '235.00'
   }
-} as Meta
+} as ComponentMeta<typeof GameItem>
 
-export const Default: Story<GameItemProps> = (args) => <GameItem {...args} />
+export const Default: ComponentStory<typeof GameItem> = (args) => (
+  <GameItem {...args} />
+)
 
-export const WithPayment: Story<GameItemProps> = (args) => (
+export const WithPayment: ComponentStory<typeof GameItem> = (args) => (
   <GameItem {...args} downloadLink="https://wongames.com/game/download/123" />
 )
 

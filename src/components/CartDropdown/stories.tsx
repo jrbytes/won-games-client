@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import CartDropdown from '.'
 
-import items from '../CartList/mock'
+import items from 'components/CartList/mock'
 
 export default {
   title: 'CartDropdown',

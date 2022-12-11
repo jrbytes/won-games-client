@@ -1,7 +1,7 @@
-import GameCard, { GameCardProps } from '../GameCard'
-import SlickArrowLeft from '../SlickArrowLeft'
-import SlickArrowRight from '../SlickArrowRight'
-import Slider, { SliderSettings } from '../Slider'
+import GameCard, { GameCardProps } from 'components/GameCard'
+import SlickArrowLeft from 'components/SlickArrowLeft'
+import SlickArrowRight from 'components/SlickArrowRight'
+import Slider, { SliderSettings } from 'components/Slider'
 
 import * as S from './styles'
 

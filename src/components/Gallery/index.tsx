@@ -3,9 +3,9 @@ import Image from 'next/image'
 import SlickSlider from 'react-slick'
 import { Close } from '@styled-icons/material-outlined'
 
-import Slider, { SliderSettings } from '../Slider'
-import SlickArrowLeft from '../SlickArrowLeft'
-import SlickArrowRight from '../SlickArrowRight'
+import Slider, { SliderSettings } from 'components/Slider'
+import SlickArrowLeft from 'components/SlickArrowLeft'
+import SlickArrowRight from 'components/SlickArrowRight'
 
 import * as S from './styles'
 

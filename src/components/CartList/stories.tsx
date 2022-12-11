@@ -1,5 +1,5 @@
-import { Story, ComponentMeta } from '@storybook/react'
-import CartList, { CartListProps } from '.'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+import CartList from '.'
 
 import mockItems from './mock'
 
@@ -17,19 +17,19 @@ export default {
   }
 } as ComponentMeta<typeof CartList>
 
-export const Default: Story<CartListProps> = (args) => (
+export const Default: ComponentStory<typeof CartList> = (args) => (
   <div style={{ maxWidth: 800, margin: '0 auto' }}>
     <CartList {...args} />
   </div>
 )
 
-export const WithButton: Story<CartListProps> = (args) => (
+export const WithButton: ComponentStory<typeof CartList> = (args) => (
   <div style={{ maxWidth: 800, margin: '0 auto' }}>
     <CartList {...args} hasButton />
   </div>
 )
 
-export const Empty: Story<CartListProps> = () => (
+export const Empty: ComponentStory<typeof CartList> = () => (
   <div style={{ maxWidth: 800, margin: '0 auto' }}>
     <CartList />
   </div>

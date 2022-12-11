@@ -1,15 +1,16 @@
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+
 import MediaMatch from '.'
 
 export default {
   title: 'MediaMatch',
   component: MediaMatch
-} as Meta
+} as ComponentMeta<typeof MediaMatch>
 
-export const Desktop: Story = () => (
+export const Desktop: ComponentStory<typeof MediaMatch> = () => (
   <MediaMatch greaterThan="medium">Only on desktop</MediaMatch>
 )
-export const Mobile: Story = () => (
+export const Mobile: ComponentStory<typeof MediaMatch> = () => (
   <MediaMatch lessThan="medium">Only on mobile</MediaMatch>
 )
 

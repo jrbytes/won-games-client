@@ -2,9 +2,9 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { Add, ShoppingCart } from '@styled-icons/material-outlined'
 
-import Button from '../Button'
-import Heading from '../Heading'
-import Radio from '../Radio'
+import Button from 'components/Button'
+import Heading from 'components/Heading'
+import Radio from 'components/Radio'
 
 import * as S from './styles'
 
