@@ -1,0 +1,13 @@
+query QueryGames($limit: Int!) {
+    games(limit: $limit) {
+      name
+      slug
+      cover {
+        url
+      }
+      developers {
+        name
+      }
+      price
+    }
+  }

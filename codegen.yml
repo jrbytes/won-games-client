@@ -1,0 +1,11 @@
+overwrite: true
+schema: "http://0.0.0.0:1337/graphql"
+documents: "src/graphql/queries/*.graphql"
+generates:
+  src/graphql/generated/graphql.ts:
+    plugins: 
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+      - add:
+          content: '/* eslint-disable */'
