@@ -10,6 +10,7 @@ import Button from 'components/Button'
 import * as S from './styles'
 
 export type GameCardProps = {
+  slug: string
   title: string
   developer: string
   img: string
@@ -23,6 +24,7 @@ export type GameCardProps = {
 }
 
 const GameCard = ({
+  slug,
   title,
   developer,
   img,
@@ -40,14 +42,16 @@ const GameCard = ({
         {ribbon}
       </Ribbon>
     )}
-    <S.ImageBox>
+
+    <S.ImageBox href={`game/${slug}`}>
       <Image src={img} alt={title} width={300} height={140} />
     </S.ImageBox>
     <S.Content>
-      <S.Info>
+      <S.Info href={`game/${slug}`}>
         <S.Title>{title}</S.Title>
         <S.Developer>{developer}</S.Developer>
       </S.Info>
+
       <S.FavButton onClick={onFav} role="button">
         {favorite ? (
           <Favorite aria-label="Remove from wishlist" />
