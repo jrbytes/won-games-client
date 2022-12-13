@@ -26,15 +26,6 @@ describe('<Ribbon />', () => {
     })
   })
 
-  it('should render with the normal size as default', () => {
-    renderWithTheme(<Ribbon> Best Seller</Ribbon>)
-
-    expect(screen.getByText(/best seller/i)).toHaveStyle({
-      height: '3.6rem',
-      fontSize: '1.4rem'
-    })
-  })
-
   it('should render with the small size', () => {
     renderWithTheme(<Ribbon size="small"> Best Seller</Ribbon>)
 
@@ -42,5 +33,16 @@ describe('<Ribbon />', () => {
       height: '2.6rem',
       fontSize: '1.2rem'
     })
+  })
+
+  it('should render with the normal size as default', () => {
+    renderWithTheme(<Ribbon>Best Seller</Ribbon>)
+
+    const child = screen.getByText(/best seller/i)
+    expect(getComputedStyle(child).height).toBe('3.6rem')
+    expect(getComputedStyle(child).fontSize).toBe('1.4rem')
+    expect(getComputedStyle(child).right).toBe('-2rem')
+    expect(getComputedStyle(child).top).toBe('1.6rem')
+    expect(getComputedStyle(child).padding).toBe('0px 2.4rem')
   })
 })
