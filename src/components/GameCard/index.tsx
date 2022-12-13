@@ -8,6 +8,7 @@ import Image from 'next/image'
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon'
 import Button from 'components/Button'
 import * as S from './styles'
+import formatPrice from 'utils/format-price'
 
 export type GameCardProps = {
   slug: string
@@ -60,8 +61,14 @@ const GameCard = ({
         )}
       </S.FavButton>
       <S.BuyBox>
-        {!!promotionalPrice && <S.Price isPromotional>{price}</S.Price>}
-        <S.Price>{promotionalPrice || price}</S.Price>
+        {!!promotionalPrice && (
+          <S.Price isPromotional>{formatPrice(Number(price))}</S.Price>
+        )}
+        <S.Price>
+          {price === '0'
+            ? 'Free'
+            : formatPrice(Number(promotionalPrice || price))}
+        </S.Price>
         <Button icon={<AddShoppingCart />} size="small" />
       </S.BuyBox>
     </S.Content>
