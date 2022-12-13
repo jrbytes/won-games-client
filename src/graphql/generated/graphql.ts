@@ -238,6 +238,50 @@ export type ComponentPageButtonInput = {
   link?: InputMaybe<Scalars['String']>;
 };
 
+export type ComponentPageHighlight = {
+  __typename?: 'ComponentPageHighlight';
+  alignment?: Maybe<Enum_Componentpagehighlight_Alignment>;
+  background?: Maybe<UploadFile>;
+  buttonLabel: Scalars['String'];
+  buttonLink: Scalars['String'];
+  floatImage?: Maybe<UploadFile>;
+  id: Scalars['ID'];
+  subtitle: Scalars['String'];
+  title: Scalars['String'];
+};
+
+export type ComponentPageHighlightInput = {
+  alignment?: InputMaybe<Enum_Componentpagehighlight_Alignment>;
+  background?: InputMaybe<Scalars['ID']>;
+  buttonLabel: Scalars['String'];
+  buttonLink: Scalars['String'];
+  floatImage?: InputMaybe<Scalars['ID']>;
+  subtitle: Scalars['String'];
+  title: Scalars['String'];
+};
+
+export type ComponentPagePopularGameInput = {
+  games?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  highlight?: InputMaybe<ComponentPageHighlightInput>;
+  title: Scalars['String'];
+};
+
+export type ComponentPagePopularGames = {
+  __typename?: 'ComponentPagePopularGames';
+  games?: Maybe<Array<Maybe<Game>>>;
+  highlight?: Maybe<ComponentPageHighlight>;
+  id: Scalars['ID'];
+  title: Scalars['String'];
+};
+
+
+export type ComponentPagePopularGamesGamesArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Scalars['String']>;
+  start?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<Scalars['JSON']>;
+};
+
 export type ComponentPageRibbon = {
   __typename?: 'ComponentPageRibbon';
   color?: Maybe<Enum_Componentpageribbon_Color>;
@@ -250,6 +294,18 @@ export type ComponentPageRibbonInput = {
   color?: InputMaybe<Enum_Componentpageribbon_Color>;
   size?: InputMaybe<Enum_Componentpageribbon_Size>;
   text?: InputMaybe<Scalars['String']>;
+};
+
+export type ComponentPageSection = {
+  __typename?: 'ComponentPageSection';
+  highlight?: Maybe<ComponentPageHighlight>;
+  id: Scalars['ID'];
+  title?: Maybe<Scalars['String']>;
+};
+
+export type ComponentPageSectionInput = {
+  highlight?: InputMaybe<ComponentPageHighlightInput>;
+  title?: InputMaybe<Scalars['String']>;
 };
 
 export type Developer = {
@@ -338,6 +394,11 @@ export type DeveloperInput = {
   slug: Scalars['String'];
   updated_by?: InputMaybe<Scalars['ID']>;
 };
+
+export enum Enum_Componentpagehighlight_Alignment {
+  Left = 'left',
+  Right = 'right'
+}
 
 export enum Enum_Componentpageribbon_Color {
   Primary = 'primary',
@@ -588,11 +649,33 @@ export type GameInput = {
   updated_by?: InputMaybe<Scalars['ID']>;
 };
 
+export type Home = {
+  __typename?: 'Home';
+  created_at: Scalars['DateTime'];
+  freeGames?: Maybe<ComponentPageSection>;
+  id: Scalars['ID'];
+  newGames?: Maybe<ComponentPageSection>;
+  popularGames?: Maybe<ComponentPagePopularGames>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  upcomingGames?: Maybe<ComponentPageSection>;
+  updated_at: Scalars['DateTime'];
+};
+
+export type HomeInput = {
+  created_by?: InputMaybe<Scalars['ID']>;
+  freeGames?: InputMaybe<ComponentPageSectionInput>;
+  newGames?: InputMaybe<ComponentPageSectionInput>;
+  popularGames?: InputMaybe<ComponentPagePopularGameInput>;
+  published_at?: InputMaybe<Scalars['DateTime']>;
+  upcomingGames?: InputMaybe<ComponentPageSectionInput>;
+  updated_by?: InputMaybe<Scalars['ID']>;
+};
+
 export type InputId = {
   id: Scalars['ID'];
 };
 
-export type Morph = Banner | BannerAggregator | BannerConnection | BannerConnectionButton | BannerConnectionCreated_At | BannerConnectionId | BannerConnectionImage | BannerConnectionPublished_At | BannerConnectionRibbon | BannerConnectionSubtitle | BannerConnectionTitle | BannerConnectionUpdated_At | BannerGroupBy | Category | CategoryAggregator | CategoryConnection | CategoryConnectionCreated_At | CategoryConnectionId | CategoryConnectionName | CategoryConnectionPublished_At | CategoryConnectionSlug | CategoryConnectionUpdated_At | CategoryGroupBy | ComponentPageButton | ComponentPageRibbon | Developer | DeveloperAggregator | DeveloperConnection | DeveloperConnectionCreated_At | DeveloperConnectionId | DeveloperConnectionName | DeveloperConnectionPublished_At | DeveloperConnectionSlug | DeveloperConnectionUpdated_At | DeveloperGroupBy | Game | GameAggregator | GameAggregatorAvg | GameAggregatorMax | GameAggregatorMin | GameAggregatorSum | GameConnection | GameConnectionCover | GameConnectionCreated_At | GameConnectionDescription | GameConnectionId | GameConnectionName | GameConnectionPrice | GameConnectionPublished_At | GameConnectionPublisher | GameConnectionRating | GameConnectionRelease_Date | GameConnectionShort_Description | GameConnectionSlug | GameConnectionUpdated_At | GameGroupBy | Platform | PlatformAggregator | PlatformConnection | PlatformConnectionCreated_At | PlatformConnectionId | PlatformConnectionName | PlatformConnectionPublished_At | PlatformConnectionSlug | PlatformConnectionUpdated_At | PlatformGroupBy | Publisher | PublisherAggregator | PublisherConnection | PublisherConnectionCreated_At | PublisherConnectionId | PublisherConnectionName | PublisherConnectionPublished_At | PublisherConnectionSlug | PublisherConnectionUpdated_At | PublisherGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_At | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_At | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | CreateBannerPayload | CreateCategoryPayload | CreateDeveloperPayload | CreateGamePayload | CreatePlatformPayload | CreatePublisherPayload | CreateRolePayload | CreateUserPayload | DeleteBannerPayload | DeleteCategoryPayload | DeleteDeveloperPayload | DeleteFilePayload | DeleteGamePayload | DeletePlatformPayload | DeletePublisherPayload | DeleteRolePayload | DeleteUserPayload | UpdateBannerPayload | UpdateCategoryPayload | UpdateDeveloperPayload | UpdateGamePayload | UpdatePlatformPayload | UpdatePublisherPayload | UpdateRolePayload | UpdateUserPayload;
+export type Morph = Banner | BannerAggregator | BannerConnection | BannerConnectionButton | BannerConnectionCreated_At | BannerConnectionId | BannerConnectionImage | BannerConnectionPublished_At | BannerConnectionRibbon | BannerConnectionSubtitle | BannerConnectionTitle | BannerConnectionUpdated_At | BannerGroupBy | Category | CategoryAggregator | CategoryConnection | CategoryConnectionCreated_At | CategoryConnectionId | CategoryConnectionName | CategoryConnectionPublished_At | CategoryConnectionSlug | CategoryConnectionUpdated_At | CategoryGroupBy | ComponentPageButton | ComponentPageHighlight | ComponentPagePopularGames | ComponentPageRibbon | ComponentPageSection | Developer | DeveloperAggregator | DeveloperConnection | DeveloperConnectionCreated_At | DeveloperConnectionId | DeveloperConnectionName | DeveloperConnectionPublished_At | DeveloperConnectionSlug | DeveloperConnectionUpdated_At | DeveloperGroupBy | Game | GameAggregator | GameAggregatorAvg | GameAggregatorMax | GameAggregatorMin | GameAggregatorSum | GameConnection | GameConnectionCover | GameConnectionCreated_At | GameConnectionDescription | GameConnectionId | GameConnectionName | GameConnectionPrice | GameConnectionPublished_At | GameConnectionPublisher | GameConnectionRating | GameConnectionRelease_Date | GameConnectionShort_Description | GameConnectionSlug | GameConnectionUpdated_At | GameGroupBy | Home | Platform | PlatformAggregator | PlatformConnection | PlatformConnectionCreated_At | PlatformConnectionId | PlatformConnectionName | PlatformConnectionPublished_At | PlatformConnectionSlug | PlatformConnectionUpdated_At | PlatformGroupBy | Publisher | PublisherAggregator | PublisherConnection | PublisherConnectionCreated_At | PublisherConnectionId | PublisherConnectionName | PublisherConnectionPublished_At | PublisherConnectionSlug | PublisherConnectionUpdated_At | PublisherGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_At | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_At | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | CreateBannerPayload | CreateCategoryPayload | CreateDeveloperPayload | CreateGamePayload | CreatePlatformPayload | CreatePublisherPayload | CreateRolePayload | CreateUserPayload | DeleteBannerPayload | DeleteCategoryPayload | DeleteDeveloperPayload | DeleteFilePayload | DeleteGamePayload | DeleteHomePayload | DeletePlatformPayload | DeletePublisherPayload | DeleteRolePayload | DeleteUserPayload | UpdateBannerPayload | UpdateCategoryPayload | UpdateDeveloperPayload | UpdateGamePayload | UpdateHomePayload | UpdatePlatformPayload | UpdatePublisherPayload | UpdateRolePayload | UpdateUserPayload;
 
 export type Mutation = {
   __typename?: 'Mutation';
@@ -612,6 +695,7 @@ export type Mutation = {
   /** Delete one file */
   deleteFile?: Maybe<DeleteFilePayload>;
   deleteGame?: Maybe<DeleteGamePayload>;
+  deleteHome?: Maybe<DeleteHomePayload>;
   deletePlatform?: Maybe<DeletePlatformPayload>;
   deletePublisher?: Maybe<DeletePublisherPayload>;
   /** Delete an existing role */
@@ -629,6 +713,7 @@ export type Mutation = {
   updateDeveloper?: Maybe<UpdateDeveloperPayload>;
   updateFileInfo: UploadFile;
   updateGame?: Maybe<UpdateGamePayload>;
+  updateHome?: Maybe<UpdateHomePayload>;
   updatePlatform?: Maybe<UpdatePlatformPayload>;
   updatePublisher?: Maybe<UpdatePublisherPayload>;
   /** Update an existing role */
@@ -783,6 +868,11 @@ export type MutationUpdateFileInfoArgs = {
 
 export type MutationUpdateGameArgs = {
   input?: InputMaybe<UpdateGameInput>;
+};
+
+
+export type MutationUpdateHomeArgs = {
+  input?: InputMaybe<UpdateHomeInput>;
 };
 
 
@@ -1009,6 +1099,7 @@ export type Query = {
   game?: Maybe<Game>;
   games?: Maybe<Array<Maybe<Game>>>;
   gamesConnection?: Maybe<GameConnection>;
+  home?: Maybe<Home>;
   me?: Maybe<UsersPermissionsMe>;
   platform?: Maybe<Platform>;
   platforms?: Maybe<Array<Maybe<Platform>>>;
@@ -1132,6 +1223,11 @@ export type QueryGamesConnectionArgs = {
   sort?: InputMaybe<Scalars['String']>;
   start?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<Scalars['JSON']>;
+};
+
+
+export type QueryHomeArgs = {
+  publicationState?: InputMaybe<PublicationState>;
 };
 
 
@@ -1781,6 +1877,11 @@ export type DeleteGamePayload = {
   game?: Maybe<Game>;
 };
 
+export type DeleteHomePayload = {
+  __typename?: 'deleteHomePayload';
+  home?: Maybe<Home>;
+};
+
 export type DeletePlatformInput = {
   where?: InputMaybe<InputId>;
 };
@@ -1843,11 +1944,35 @@ export type EditComponentPageButtonInput = {
   link?: InputMaybe<Scalars['String']>;
 };
 
+export type EditComponentPageHighlightInput = {
+  alignment?: InputMaybe<Enum_Componentpagehighlight_Alignment>;
+  background?: InputMaybe<Scalars['ID']>;
+  buttonLabel?: InputMaybe<Scalars['String']>;
+  buttonLink?: InputMaybe<Scalars['String']>;
+  floatImage?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
+  subtitle?: InputMaybe<Scalars['String']>;
+  title?: InputMaybe<Scalars['String']>;
+};
+
+export type EditComponentPagePopularGameInput = {
+  games?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
+  highlight?: InputMaybe<EditComponentPageHighlightInput>;
+  id?: InputMaybe<Scalars['ID']>;
+  title?: InputMaybe<Scalars['String']>;
+};
+
 export type EditComponentPageRibbonInput = {
   color?: InputMaybe<Enum_Componentpageribbon_Color>;
   id?: InputMaybe<Scalars['ID']>;
   size?: InputMaybe<Enum_Componentpageribbon_Size>;
   text?: InputMaybe<Scalars['String']>;
+};
+
+export type EditComponentPageSectionInput = {
+  highlight?: InputMaybe<EditComponentPageHighlightInput>;
+  id?: InputMaybe<Scalars['ID']>;
+  title?: InputMaybe<Scalars['String']>;
 };
 
 export type EditDeveloperInput = {
@@ -1895,6 +2020,16 @@ export type EditGameInput = {
   release_date?: InputMaybe<Scalars['Date']>;
   short_description?: InputMaybe<Scalars['String']>;
   slug?: InputMaybe<Scalars['String']>;
+  updated_by?: InputMaybe<Scalars['ID']>;
+};
+
+export type EditHomeInput = {
+  created_by?: InputMaybe<Scalars['ID']>;
+  freeGames?: InputMaybe<EditComponentPageSectionInput>;
+  newGames?: InputMaybe<EditComponentPageSectionInput>;
+  popularGames?: InputMaybe<EditComponentPagePopularGameInput>;
+  published_at?: InputMaybe<Scalars['DateTime']>;
+  upcomingGames?: InputMaybe<EditComponentPageSectionInput>;
   updated_by?: InputMaybe<Scalars['ID']>;
 };
 
@@ -1980,6 +2115,15 @@ export type UpdateGamePayload = {
   game?: Maybe<Game>;
 };
 
+export type UpdateHomeInput = {
+  data?: InputMaybe<EditHomeInput>;
+};
+
+export type UpdateHomePayload = {
+  __typename?: 'updateHomePayload';
+  home?: Maybe<Home>;
+};
+
 export type UpdatePlatformInput = {
   data?: InputMaybe<EditPlatformInput>;
   where?: InputMaybe<InputId>;
@@ -2022,6 +2166,10 @@ export type UpdateUserPayload = {
 
 export type BannerFragmentFragment = { __typename?: 'Banner', title: string, subtitle: string, image?: { __typename?: 'UploadFile', url: string } | null, button?: { __typename?: 'ComponentPageButton', label: string, link: string } | null, ribbon?: { __typename?: 'ComponentPageRibbon', text?: string | null, color?: Enum_Componentpageribbon_Color | null, size?: Enum_Componentpageribbon_Size | null } | null };
 
+export type GameFragmentFragment = { __typename?: 'Game', name: string, slug: string, price: number, cover?: { __typename?: 'UploadFile', url: string } | null, developers?: Array<{ __typename?: 'Developer', name: string } | null> | null };
+
+export type HighlightFragmentFragment = { __typename?: 'ComponentPageHighlight', title: string, subtitle: string, buttonLabel: string, buttonLink: string, alignment?: Enum_Componentpagehighlight_Alignment | null, background?: { __typename?: 'UploadFile', url: string } | null, floatImage?: { __typename?: 'UploadFile', url: string } | null };
+
 export type QueryGamesQueryVariables = Exact<{
   limit: Scalars['Int'];
 }>;
@@ -2039,7 +2187,7 @@ export type QueryGameBySlugQuery = { __typename?: 'Query', games?: Array<{ __typ
 export type GetHomeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetHomeQuery = { __typename?: 'Query', banners?: Array<{ __typename?: 'Banner', title: string, subtitle: string, image?: { __typename?: 'UploadFile', url: string } | null, button?: { __typename?: 'ComponentPageButton', label: string, link: string } | null, ribbon?: { __typename?: 'ComponentPageRibbon', text?: string | null, color?: Enum_Componentpageribbon_Color | null, size?: Enum_Componentpageribbon_Size | null } | null } | null> | null };
+export type GetHomeQuery = { __typename?: 'Query', banners?: Array<{ __typename?: 'Banner', title: string, subtitle: string, image?: { __typename?: 'UploadFile', url: string } | null, button?: { __typename?: 'ComponentPageButton', label: string, link: string } | null, ribbon?: { __typename?: 'ComponentPageRibbon', text?: string | null, color?: Enum_Componentpageribbon_Color | null, size?: Enum_Componentpageribbon_Size | null } | null } | null> | null, newGames?: Array<{ __typename?: 'Game', name: string, slug: string, price: number, cover?: { __typename?: 'UploadFile', url: string } | null, developers?: Array<{ __typename?: 'Developer', name: string } | null> | null } | null> | null, upcomingGames?: Array<{ __typename?: 'Game', name: string, slug: string, price: number, cover?: { __typename?: 'UploadFile', url: string } | null, developers?: Array<{ __typename?: 'Developer', name: string } | null> | null } | null> | null, freeGames?: Array<{ __typename?: 'Game', name: string, slug: string, price: number, cover?: { __typename?: 'UploadFile', url: string } | null, developers?: Array<{ __typename?: 'Developer', name: string } | null> | null } | null> | null, sections?: { __typename?: 'Home', newGames?: { __typename?: 'ComponentPageSection', title?: string | null, highlight?: { __typename?: 'ComponentPageHighlight', title: string, subtitle: string, buttonLabel: string, buttonLink: string, alignment?: Enum_Componentpagehighlight_Alignment | null, background?: { __typename?: 'UploadFile', url: string } | null, floatImage?: { __typename?: 'UploadFile', url: string } | null } | null } | null, popularGames?: { __typename?: 'ComponentPagePopularGames', title: string, highlight?: { __typename?: 'ComponentPageHighlight', title: string, subtitle: string, buttonLabel: string, buttonLink: string, alignment?: Enum_Componentpagehighlight_Alignment | null, background?: { __typename?: 'UploadFile', url: string } | null, floatImage?: { __typename?: 'UploadFile', url: string } | null } | null, games?: Array<{ __typename?: 'Game', name: string, slug: string, price: number, cover?: { __typename?: 'UploadFile', url: string } | null, developers?: Array<{ __typename?: 'Developer', name: string } | null> | null } | null> | null } | null, upcomingGames?: { __typename?: 'ComponentPageSection', title?: string | null, highlight?: { __typename?: 'ComponentPageHighlight', title: string, subtitle: string, buttonLabel: string, buttonLink: string, alignment?: Enum_Componentpagehighlight_Alignment | null, background?: { __typename?: 'UploadFile', url: string } | null, floatImage?: { __typename?: 'UploadFile', url: string } | null } | null } | null, freeGames?: { __typename?: 'ComponentPageSection', title?: string | null, highlight?: { __typename?: 'ComponentPageHighlight', title: string, subtitle: string, buttonLabel: string, buttonLink: string, alignment?: Enum_Componentpagehighlight_Alignment | null, background?: { __typename?: 'UploadFile', url: string } | null, floatImage?: { __typename?: 'UploadFile', url: string } | null } | null } | null } | null };
 
 export const BannerFragmentFragmentDoc = gql`
     fragment BannerFragment on Banner {
@@ -2059,21 +2207,41 @@ export const BannerFragmentFragmentDoc = gql`
   }
 }
     `;
+export const GameFragmentFragmentDoc = gql`
+    fragment GameFragment on Game {
+  name
+  slug
+  cover {
+    url
+  }
+  developers {
+    name
+  }
+  price
+}
+    `;
+export const HighlightFragmentFragmentDoc = gql`
+    fragment HighlightFragment on ComponentPageHighlight {
+  title
+  subtitle
+  background {
+    url
+  }
+  floatImage {
+    url
+  }
+  buttonLabel
+  buttonLink
+  alignment
+}
+    `;
 export const QueryGamesDocument = gql`
     query QueryGames($limit: Int!) {
   games(limit: $limit) {
-    name
-    slug
-    cover {
-      url
-    }
-    developers {
-      name
-    }
-    price
+    ...GameFragment
   }
 }
-    `;
+    ${GameFragmentFragmentDoc}`;
 
 /**
  * __useQueryGamesQuery__
@@ -2166,8 +2334,56 @@ export const GetHomeDocument = gql`
   banners {
     ...BannerFragment
   }
+  newGames: games(
+    where: {release_date_lte: "2021-01-27"}
+    sort: "release_date:desc"
+    limit: 8
+  ) {
+    ...GameFragment
+  }
+  upcomingGames: games(
+    where: {release_date_gt: "2021-01-27"}
+    sort: "release_date:asc"
+    limit: 8
+  ) {
+    ...GameFragment
+  }
+  freeGames: games(where: {price: 0}, sort: "release_date:desc", limit: 8) {
+    ...GameFragment
+  }
+  sections: home {
+    newGames {
+      title
+      highlight {
+        ...HighlightFragment
+      }
+    }
+    popularGames {
+      title
+      highlight {
+        ...HighlightFragment
+      }
+      games(limit: 8) {
+        ...GameFragment
+      }
+    }
+    upcomingGames {
+      title
+      highlight {
+        ...HighlightFragment
+      }
+    }
+    freeGames {
+      title
+      highlight {
+        ...HighlightFragment
+      }
+    }
+  }
 }
-    ${BannerFragmentFragmentDoc}`;
+    ${BannerFragmentFragmentDoc}
+${GameFragmentFragmentDoc}
+${HighlightFragmentFragmentDoc}`;
 
 /**
  * __useGetHomeQuery__
