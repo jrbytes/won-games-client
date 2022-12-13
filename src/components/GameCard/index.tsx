@@ -65,7 +65,7 @@ const GameCard = ({
           <S.Price isPromotional>{formatPrice(Number(price))}</S.Price>
         )}
         <S.Price>
-          {price === '0'
+          {price == '0'
             ? 'Free'
             : formatPrice(Number(promotionalPrice || price))}
         </S.Price>
