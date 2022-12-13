@@ -30,6 +30,110 @@ export type AdminUser = {
   username?: Maybe<Scalars['String']>;
 };
 
+export type Banner = {
+  __typename?: 'Banner';
+  button?: Maybe<ComponentPageButton>;
+  created_at: Scalars['DateTime'];
+  id: Scalars['ID'];
+  image?: Maybe<UploadFile>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  ribbon?: Maybe<ComponentPageRibbon>;
+  subtitle: Scalars['String'];
+  title: Scalars['String'];
+  updated_at: Scalars['DateTime'];
+};
+
+export type BannerAggregator = {
+  __typename?: 'BannerAggregator';
+  count?: Maybe<Scalars['Int']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type BannerConnection = {
+  __typename?: 'BannerConnection';
+  aggregate?: Maybe<BannerAggregator>;
+  groupBy?: Maybe<BannerGroupBy>;
+  values?: Maybe<Array<Maybe<Banner>>>;
+};
+
+export type BannerConnectionButton = {
+  __typename?: 'BannerConnectionButton';
+  connection?: Maybe<BannerConnection>;
+  key?: Maybe<Scalars['ID']>;
+};
+
+export type BannerConnectionCreated_At = {
+  __typename?: 'BannerConnectionCreated_at';
+  connection?: Maybe<BannerConnection>;
+  key?: Maybe<Scalars['DateTime']>;
+};
+
+export type BannerConnectionId = {
+  __typename?: 'BannerConnectionId';
+  connection?: Maybe<BannerConnection>;
+  key?: Maybe<Scalars['ID']>;
+};
+
+export type BannerConnectionImage = {
+  __typename?: 'BannerConnectionImage';
+  connection?: Maybe<BannerConnection>;
+  key?: Maybe<Scalars['ID']>;
+};
+
+export type BannerConnectionPublished_At = {
+  __typename?: 'BannerConnectionPublished_at';
+  connection?: Maybe<BannerConnection>;
+  key?: Maybe<Scalars['DateTime']>;
+};
+
+export type BannerConnectionRibbon = {
+  __typename?: 'BannerConnectionRibbon';
+  connection?: Maybe<BannerConnection>;
+  key?: Maybe<Scalars['ID']>;
+};
+
+export type BannerConnectionSubtitle = {
+  __typename?: 'BannerConnectionSubtitle';
+  connection?: Maybe<BannerConnection>;
+  key?: Maybe<Scalars['String']>;
+};
+
+export type BannerConnectionTitle = {
+  __typename?: 'BannerConnectionTitle';
+  connection?: Maybe<BannerConnection>;
+  key?: Maybe<Scalars['String']>;
+};
+
+export type BannerConnectionUpdated_At = {
+  __typename?: 'BannerConnectionUpdated_at';
+  connection?: Maybe<BannerConnection>;
+  key?: Maybe<Scalars['DateTime']>;
+};
+
+export type BannerGroupBy = {
+  __typename?: 'BannerGroupBy';
+  button?: Maybe<Array<Maybe<BannerConnectionButton>>>;
+  created_at?: Maybe<Array<Maybe<BannerConnectionCreated_At>>>;
+  id?: Maybe<Array<Maybe<BannerConnectionId>>>;
+  image?: Maybe<Array<Maybe<BannerConnectionImage>>>;
+  published_at?: Maybe<Array<Maybe<BannerConnectionPublished_At>>>;
+  ribbon?: Maybe<Array<Maybe<BannerConnectionRibbon>>>;
+  subtitle?: Maybe<Array<Maybe<BannerConnectionSubtitle>>>;
+  title?: Maybe<Array<Maybe<BannerConnectionTitle>>>;
+  updated_at?: Maybe<Array<Maybe<BannerConnectionUpdated_At>>>;
+};
+
+export type BannerInput = {
+  button?: InputMaybe<ComponentPageButtonInput>;
+  created_by?: InputMaybe<Scalars['ID']>;
+  image?: InputMaybe<Scalars['ID']>;
+  published_at?: InputMaybe<Scalars['DateTime']>;
+  ribbon?: InputMaybe<ComponentPageRibbonInput>;
+  subtitle: Scalars['String'];
+  title: Scalars['String'];
+  updated_by?: InputMaybe<Scalars['ID']>;
+};
+
 export enum CacheControlScope {
   Private = 'PRIVATE',
   Public = 'PUBLIC'
@@ -122,6 +226,32 @@ export type CategoryInput = {
   updated_by?: InputMaybe<Scalars['ID']>;
 };
 
+export type ComponentPageButton = {
+  __typename?: 'ComponentPageButton';
+  id: Scalars['ID'];
+  label: Scalars['String'];
+  link: Scalars['String'];
+};
+
+export type ComponentPageButtonInput = {
+  label: Scalars['String'];
+  link?: InputMaybe<Scalars['String']>;
+};
+
+export type ComponentPageRibbon = {
+  __typename?: 'ComponentPageRibbon';
+  color?: Maybe<Enum_Componentpageribbon_Color>;
+  id: Scalars['ID'];
+  size?: Maybe<Enum_Componentpageribbon_Size>;
+  text?: Maybe<Scalars['String']>;
+};
+
+export type ComponentPageRibbonInput = {
+  color?: InputMaybe<Enum_Componentpageribbon_Color>;
+  size?: InputMaybe<Enum_Componentpageribbon_Size>;
+  text?: InputMaybe<Scalars['String']>;
+};
+
 export type Developer = {
   __typename?: 'Developer';
   created_at: Scalars['DateTime'];
@@ -208,6 +338,16 @@ export type DeveloperInput = {
   slug: Scalars['String'];
   updated_by?: InputMaybe<Scalars['ID']>;
 };
+
+export enum Enum_Componentpageribbon_Color {
+  Primary = 'primary',
+  Secondary = 'secondary'
+}
+
+export enum Enum_Componentpageribbon_Size {
+  Normal = 'normal',
+  Small = 'small'
+}
 
 export enum Enum_Game_Rating {
   Br0 = 'BR0',
@@ -452,10 +592,11 @@ export type InputId = {
   id: Scalars['ID'];
 };
 
-export type Morph = Category | CategoryAggregator | CategoryConnection | CategoryConnectionCreated_At | CategoryConnectionId | CategoryConnectionName | CategoryConnectionPublished_At | CategoryConnectionSlug | CategoryConnectionUpdated_At | CategoryGroupBy | Developer | DeveloperAggregator | DeveloperConnection | DeveloperConnectionCreated_At | DeveloperConnectionId | DeveloperConnectionName | DeveloperConnectionPublished_At | DeveloperConnectionSlug | DeveloperConnectionUpdated_At | DeveloperGroupBy | Game | GameAggregator | GameAggregatorAvg | GameAggregatorMax | GameAggregatorMin | GameAggregatorSum | GameConnection | GameConnectionCover | GameConnectionCreated_At | GameConnectionDescription | GameConnectionId | GameConnectionName | GameConnectionPrice | GameConnectionPublished_At | GameConnectionPublisher | GameConnectionRating | GameConnectionRelease_Date | GameConnectionShort_Description | GameConnectionSlug | GameConnectionUpdated_At | GameGroupBy | Platform | PlatformAggregator | PlatformConnection | PlatformConnectionCreated_At | PlatformConnectionId | PlatformConnectionName | PlatformConnectionPublished_At | PlatformConnectionSlug | PlatformConnectionUpdated_At | PlatformGroupBy | Publisher | PublisherAggregator | PublisherConnection | PublisherConnectionCreated_At | PublisherConnectionId | PublisherConnectionName | PublisherConnectionPublished_At | PublisherConnectionSlug | PublisherConnectionUpdated_At | PublisherGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_At | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_At | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | CreateCategoryPayload | CreateDeveloperPayload | CreateGamePayload | CreatePlatformPayload | CreatePublisherPayload | CreateRolePayload | CreateUserPayload | DeleteCategoryPayload | DeleteDeveloperPayload | DeleteFilePayload | DeleteGamePayload | DeletePlatformPayload | DeletePublisherPayload | DeleteRolePayload | DeleteUserPayload | UpdateCategoryPayload | UpdateDeveloperPayload | UpdateGamePayload | UpdatePlatformPayload | UpdatePublisherPayload | UpdateRolePayload | UpdateUserPayload;
+export type Morph = Banner | BannerAggregator | BannerConnection | BannerConnectionButton | BannerConnectionCreated_At | BannerConnectionId | BannerConnectionImage | BannerConnectionPublished_At | BannerConnectionRibbon | BannerConnectionSubtitle | BannerConnectionTitle | BannerConnectionUpdated_At | BannerGroupBy | Category | CategoryAggregator | CategoryConnection | CategoryConnectionCreated_At | CategoryConnectionId | CategoryConnectionName | CategoryConnectionPublished_At | CategoryConnectionSlug | CategoryConnectionUpdated_At | CategoryGroupBy | ComponentPageButton | ComponentPageRibbon | Developer | DeveloperAggregator | DeveloperConnection | DeveloperConnectionCreated_At | DeveloperConnectionId | DeveloperConnectionName | DeveloperConnectionPublished_At | DeveloperConnectionSlug | DeveloperConnectionUpdated_At | DeveloperGroupBy | Game | GameAggregator | GameAggregatorAvg | GameAggregatorMax | GameAggregatorMin | GameAggregatorSum | GameConnection | GameConnectionCover | GameConnectionCreated_At | GameConnectionDescription | GameConnectionId | GameConnectionName | GameConnectionPrice | GameConnectionPublished_At | GameConnectionPublisher | GameConnectionRating | GameConnectionRelease_Date | GameConnectionShort_Description | GameConnectionSlug | GameConnectionUpdated_At | GameGroupBy | Platform | PlatformAggregator | PlatformConnection | PlatformConnectionCreated_At | PlatformConnectionId | PlatformConnectionName | PlatformConnectionPublished_At | PlatformConnectionSlug | PlatformConnectionUpdated_At | PlatformGroupBy | Publisher | PublisherAggregator | PublisherConnection | PublisherConnectionCreated_At | PublisherConnectionId | PublisherConnectionName | PublisherConnectionPublished_At | PublisherConnectionSlug | PublisherConnectionUpdated_At | PublisherGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_At | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_At | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | CreateBannerPayload | CreateCategoryPayload | CreateDeveloperPayload | CreateGamePayload | CreatePlatformPayload | CreatePublisherPayload | CreateRolePayload | CreateUserPayload | DeleteBannerPayload | DeleteCategoryPayload | DeleteDeveloperPayload | DeleteFilePayload | DeleteGamePayload | DeletePlatformPayload | DeletePublisherPayload | DeleteRolePayload | DeleteUserPayload | UpdateBannerPayload | UpdateCategoryPayload | UpdateDeveloperPayload | UpdateGamePayload | UpdatePlatformPayload | UpdatePublisherPayload | UpdateRolePayload | UpdateUserPayload;
 
 export type Mutation = {
   __typename?: 'Mutation';
+  createBanner?: Maybe<CreateBannerPayload>;
   createCategory?: Maybe<CreateCategoryPayload>;
   createDeveloper?: Maybe<CreateDeveloperPayload>;
   createGame?: Maybe<CreateGamePayload>;
@@ -465,6 +606,7 @@ export type Mutation = {
   createRole?: Maybe<CreateRolePayload>;
   /** Create a new user */
   createUser?: Maybe<CreateUserPayload>;
+  deleteBanner?: Maybe<DeleteBannerPayload>;
   deleteCategory?: Maybe<DeleteCategoryPayload>;
   deleteDeveloper?: Maybe<DeleteDeveloperPayload>;
   /** Delete one file */
@@ -482,6 +624,7 @@ export type Mutation = {
   multipleUpload: Array<Maybe<UploadFile>>;
   register: UsersPermissionsLoginPayload;
   resetPassword?: Maybe<UsersPermissionsLoginPayload>;
+  updateBanner?: Maybe<UpdateBannerPayload>;
   updateCategory?: Maybe<UpdateCategoryPayload>;
   updateDeveloper?: Maybe<UpdateDeveloperPayload>;
   updateFileInfo: UploadFile;
@@ -493,6 +636,11 @@ export type Mutation = {
   /** Update an existing user */
   updateUser?: Maybe<UpdateUserPayload>;
   upload: UploadFile;
+};
+
+
+export type MutationCreateBannerArgs = {
+  input?: InputMaybe<CreateBannerInput>;
 };
 
 
@@ -528,6 +676,11 @@ export type MutationCreateRoleArgs = {
 
 export type MutationCreateUserArgs = {
   input?: InputMaybe<CreateUserInput>;
+};
+
+
+export type MutationDeleteBannerArgs = {
+  input?: InputMaybe<DeleteBannerInput>;
 };
 
 
@@ -604,6 +757,11 @@ export type MutationResetPasswordArgs = {
   code: Scalars['String'];
   password: Scalars['String'];
   passwordConfirmation: Scalars['String'];
+};
+
+
+export type MutationUpdateBannerArgs = {
+  input?: InputMaybe<UpdateBannerInput>;
 };
 
 
@@ -837,6 +995,9 @@ export type PublisherInput = {
 
 export type Query = {
   __typename?: 'Query';
+  banner?: Maybe<Banner>;
+  banners?: Maybe<Array<Maybe<Banner>>>;
+  bannersConnection?: Maybe<BannerConnection>;
   categories?: Maybe<Array<Maybe<Category>>>;
   categoriesConnection?: Maybe<CategoryConnection>;
   category?: Maybe<Category>;
@@ -862,6 +1023,29 @@ export type Query = {
   user?: Maybe<UsersPermissionsUser>;
   users?: Maybe<Array<Maybe<UsersPermissionsUser>>>;
   usersConnection?: Maybe<UsersPermissionsUserConnection>;
+};
+
+
+export type QueryBannerArgs = {
+  id: Scalars['ID'];
+  publicationState?: InputMaybe<PublicationState>;
+};
+
+
+export type QueryBannersArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  publicationState?: InputMaybe<PublicationState>;
+  sort?: InputMaybe<Scalars['String']>;
+  start?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<Scalars['JSON']>;
+};
+
+
+export type QueryBannersConnectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Scalars['String']>;
+  start?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<Scalars['JSON']>;
 };
 
 
@@ -1480,6 +1664,15 @@ export type UsersPermissionsUserGroupBy = {
   username?: Maybe<Array<Maybe<UsersPermissionsUserConnectionUsername>>>;
 };
 
+export type CreateBannerInput = {
+  data?: InputMaybe<BannerInput>;
+};
+
+export type CreateBannerPayload = {
+  __typename?: 'createBannerPayload';
+  banner?: Maybe<Banner>;
+};
+
 export type CreateCategoryInput = {
   data?: InputMaybe<CategoryInput>;
 };
@@ -1541,6 +1734,15 @@ export type CreateUserInput = {
 export type CreateUserPayload = {
   __typename?: 'createUserPayload';
   user?: Maybe<UsersPermissionsUser>;
+};
+
+export type DeleteBannerInput = {
+  where?: InputMaybe<InputId>;
+};
+
+export type DeleteBannerPayload = {
+  __typename?: 'deleteBannerPayload';
+  banner?: Maybe<Banner>;
 };
 
 export type DeleteCategoryInput = {
@@ -1615,6 +1817,17 @@ export type DeleteUserPayload = {
   user?: Maybe<UsersPermissionsUser>;
 };
 
+export type EditBannerInput = {
+  button?: InputMaybe<EditComponentPageButtonInput>;
+  created_by?: InputMaybe<Scalars['ID']>;
+  image?: InputMaybe<Scalars['ID']>;
+  published_at?: InputMaybe<Scalars['DateTime']>;
+  ribbon?: InputMaybe<EditComponentPageRibbonInput>;
+  subtitle?: InputMaybe<Scalars['String']>;
+  title?: InputMaybe<Scalars['String']>;
+  updated_by?: InputMaybe<Scalars['ID']>;
+};
+
 export type EditCategoryInput = {
   created_by?: InputMaybe<Scalars['ID']>;
   games?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
@@ -1622,6 +1835,19 @@ export type EditCategoryInput = {
   published_at?: InputMaybe<Scalars['DateTime']>;
   slug?: InputMaybe<Scalars['String']>;
   updated_by?: InputMaybe<Scalars['ID']>;
+};
+
+export type EditComponentPageButtonInput = {
+  id?: InputMaybe<Scalars['ID']>;
+  label?: InputMaybe<Scalars['String']>;
+  link?: InputMaybe<Scalars['String']>;
+};
+
+export type EditComponentPageRibbonInput = {
+  color?: InputMaybe<Enum_Componentpageribbon_Color>;
+  id?: InputMaybe<Scalars['ID']>;
+  size?: InputMaybe<Enum_Componentpageribbon_Size>;
+  text?: InputMaybe<Scalars['String']>;
 };
 
 export type EditDeveloperInput = {
@@ -1714,6 +1940,16 @@ export type EditUserInput = {
   username?: InputMaybe<Scalars['String']>;
 };
 
+export type UpdateBannerInput = {
+  data?: InputMaybe<EditBannerInput>;
+  where?: InputMaybe<InputId>;
+};
+
+export type UpdateBannerPayload = {
+  __typename?: 'updateBannerPayload';
+  banner?: Maybe<Banner>;
+};
+
 export type UpdateCategoryInput = {
   data?: InputMaybe<EditCategoryInput>;
   where?: InputMaybe<InputId>;
@@ -1797,6 +2033,11 @@ export type QueryGameBySlugQueryVariables = Exact<{
 
 
 export type QueryGameBySlugQuery = { __typename?: 'Query', games?: Array<{ __typename?: 'Game', name: string, short_description: string, description: string, price: number, rating?: Enum_Game_Rating | null, release_date?: any | null, gallery?: Array<{ __typename?: 'UploadFile', src: string, label?: string | null } | null> | null, cover?: { __typename?: 'UploadFile', src: string } | null, developers?: Array<{ __typename?: 'Developer', name: string } | null> | null, publisher?: { __typename?: 'Publisher', name: string } | null, categories?: Array<{ __typename?: 'Category', name: string } | null> | null, platforms?: Array<{ __typename?: 'Platform', name: string } | null> | null } | null> | null };
+
+export type GetHomeQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetHomeQuery = { __typename?: 'Query', banners?: Array<{ __typename?: 'Banner', title: string, subtitle: string, image?: { __typename?: 'UploadFile', url: string } | null, button?: { __typename?: 'ComponentPageButton', label: string, link: string } | null, ribbon?: { __typename?: 'ComponentPageRibbon', text?: string | null, color?: Enum_Componentpageribbon_Color | null, size?: Enum_Componentpageribbon_Size | null } | null } | null> | null };
 
 
 export const QueryGamesDocument = gql`
@@ -1901,3 +2142,50 @@ export function useQueryGameBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOp
 export type QueryGameBySlugQueryHookResult = ReturnType<typeof useQueryGameBySlugQuery>;
 export type QueryGameBySlugLazyQueryHookResult = ReturnType<typeof useQueryGameBySlugLazyQuery>;
 export type QueryGameBySlugQueryResult = Apollo.QueryResult<QueryGameBySlugQuery, QueryGameBySlugQueryVariables>;
+export const GetHomeDocument = gql`
+    query getHome {
+  banners {
+    image {
+      url
+    }
+    title
+    subtitle
+    button {
+      label
+      link
+    }
+    ribbon {
+      text
+      color
+      size
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetHomeQuery__
+ *
+ * To run a query within a React component, call `useGetHomeQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetHomeQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetHomeQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetHomeQuery(baseOptions?: Apollo.QueryHookOptions<GetHomeQuery, GetHomeQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetHomeQuery, GetHomeQueryVariables>(GetHomeDocument, options);
+      }
+export function useGetHomeLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetHomeQuery, GetHomeQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetHomeQuery, GetHomeQueryVariables>(GetHomeDocument, options);
+        }
+export type GetHomeQueryHookResult = ReturnType<typeof useGetHomeQuery>;
+export type GetHomeLazyQueryHookResult = ReturnType<typeof useGetHomeLazyQuery>;
+export type GetHomeQueryResult = Apollo.QueryResult<GetHomeQuery, GetHomeQueryVariables>;
