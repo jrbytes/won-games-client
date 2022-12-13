@@ -17,7 +17,7 @@ describe('<GameInfo />', () => {
       screen.getByRole('heading', { name: 'Population Zero' })
     ).toBeInTheDocument()
     expect(screen.getByText('Game Description')).toBeInTheDocument()
-    expect(screen.getByText('$ 60.00')).toBeInTheDocument()
+    expect(screen.getByText('$60.00')).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
   })
